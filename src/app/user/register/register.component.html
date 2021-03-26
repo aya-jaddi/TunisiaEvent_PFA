@@ -1,0 +1,72 @@
+<body class="bg-gradient-primary">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-10 col-lg-10 col-md-8">
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0">
+                        <div class="row">
+                            <div class="col-lg-4 d-none d-lg-block justify-content-center">
+                                <img src="./assets/img/logo-tunisia-events.png" class="img-circle ">
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="p-5">
+                                    <div class="text-center">
+                                        <mat-card-title>Créer un compte</mat-card-title>
+                                    </div>
+
+                                    <form [formGroup]="this.crudApi.dataForm" (ngSubmit)="onSubmit()"
+                                        autocomplete="off">
+
+
+                                        <mat-form-field>
+                                            <input type="text" class="form-control form-control-user" id="nom" matInput
+                                                required placeholder="name" formControlName="name">
+                                        </mat-form-field>
+
+                                        <mat-form-field>
+                                            <input type="text" class="form-control form-control-user" id="login"
+                                                matInput placeholder="email" required formControlName="email">
+                                        </mat-form-field>
+
+
+                                        
+                                        <mat-form-field appearance="fill">
+
+                                            <mat-label>Role</mat-label>
+                                            <mat-select >
+                                                <mat-option value="Admin">Administrateur</mat-option>
+                                                <mat-option value="Organisateur">Organisateur</mat-option>
+                                                <mat-option value="Abonnee">Abonnée</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+
+
+                                      
+                                        
+
+                                       
+
+                                        <mat-form-field>
+                                            <input type="password" class="form-control form-control-user" id="pwd"
+                                                matInput placeholder="password" required formControlName="password">
+                                        </mat-form-field>
+                                        <div class="example-button-row">
+                                            <button mat-raised-button color="primary" class="btn-block"> <span class="material-icons">login</span> Register
+                                                Account</button>
+                                        </div>
+
+                                    </form>
+                                    <hr>
+                                    <div class="text-center">
+                                        <a class="small" href="">Already have an account? Login!</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>

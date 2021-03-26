@@ -1,0 +1,57 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                        <div class="card-header card-header-warning">
+                            <h2 class="card-title">Liste Events</h2>
+                           <a (click)="addCategorie()"> <button mat-mini-fab color="warning">
+                                <span class="material-icons">
+                                    add_circle_outline
+                                    </span>  </button>   Add Event</a>
+                        </div>
+
+                       
+                        
+                        <div class="card-body table-responsive">
+                            <table class="table table-hover">
+                                <thead class="text-warning">
+                                    <tr>
+                                    <th>Code</th>
+                                    <th>Libelle</th>
+                                    <th>Ville</th>
+                                    <th>Image</th>
+                                    <th>Organisateur</th>
+                                    <th>DateEvent</th>
+                                    <th>Prix_Ticket</th>
+                                    <th>Stock</th>
+                                    <th>Edite</th>
+                                    <th>Delete</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let item of crudApi.listData ">
+                                        <td>{{item.id}}</td>
+                                        <td>{{item.code}}</td>
+                                        <td>{{item.libelle}}</td>
+
+                                        <td><button mat-mini-fab color="primary"(click) = "selectData(item)">
+                                       <span class="material-icons">create</span> </button></td>
+
+                                       
+
+                                    <td> <button mat-mini-fab color="warn" (click) = "removeData(item.id)">
+                                  
+                                     <span class="material-icons"> delete </span>
+                                        </button></td>
+                                    </tr>
+                                   
+                        
+                                </tbody>
+
+
+
+                            </table>
+                        </div>
+                    </div>
+                </div>

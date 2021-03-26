@@ -1,0 +1,53 @@
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                        <div class="card-header card-header-info">
+                            <h2 class="card-title">Liste Catégories</h2>
+                           <a (click)="addCategorie()"> <button mat-mini-fab color="warning" [routerLink]="['/add-categorie']">
+                                <span class="material-icons">
+                                    add_circle_outline
+                                    </span>  </button>   Add Catégorie</a>
+                        </div>
+
+                       
+                        
+                        <div class="card-body table-responsive">
+                            <table class="table table-hover">
+                                <thead class="text-info">
+                                    <tr>
+                                    <th>Id</th>
+                                    <th>Code</th>
+                                    <th>Libelle</th>
+                                    <th>Edite</th>
+                                    <th>Delete</th>
+                                </tr>
+                                </thead>
+                                <tbody *ngFor="let categorie of categories">
+                                    <tr >
+                                        <td>{{categorie.id}}</td>
+                                        <td>{{categorie.codeC}}</td>
+                                        <td>{{categorie.libelle}}</td>
+
+                                        <td><button mat-mini-fab color="primary" [routerLink]="['/updateCategorie',categorie.id]">
+                                       <span class="material-icons">create</span> </button></td>
+
+                                       
+
+                                    <td> <button mat-mini-fab color="warn" (click)="supprimerCategorie(categorie)">
+                                  
+                                     <span class="material-icons"> delete </span>
+                                        </button></td>
+                                    </tr>
+                                   
+                        
+                                </tbody>
+
+
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
